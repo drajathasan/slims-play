@@ -1,20 +1,12 @@
 {
   "dependencies": {
     "laravel-mix": "^6.0.49",
-    "vue": "^3.2.37"
+    "postcss-import": "^14.1.0",
+    "vue": "^3.2.38",
+    "vue-router": "^4.1.5"
   },
   "devDependencies": {
     "tailwindcss": "^3.1.8",
     "vue-loader": "^16.8.3"
-  },
-  "name": "play-theme",
-  "version": "1.0.0",
-  "description": "Template + Plugin",
-  "main": "index.js",
-  "scripts": {
-    "production": "mix --production",
-    "dev": "mix watch"
-  },
-  "author": "Drajat Hasan",
-  "license": "GPL-3.0"
+  }
 }

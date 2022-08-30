@@ -1,0 +1,22 @@
+{
+    "name": "drajathasan/slims-play",
+    "description": "Play is SPA template for human activity",
+    "type": "project",
+    "require": {
+        "jaybizzle/crawler-detect": "^1.2",
+        "zein/http": "dev-main",
+        "zein/database": "^1.1"
+    },
+    "license": "GPL-3.0",
+    "autoload": {
+        "psr-4": {
+            "SLiMS\\Play\\": "lib/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Drajat Hasan",
+            "email": "drajathasan20@gmail.com"
+        }
+    ]
+}
