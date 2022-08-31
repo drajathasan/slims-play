@@ -1,8 +1,5 @@
 <template>
     <play-navbar :site-name="props.siteName" :site-subname="props.siteSubname"/>
-    <div class="h-screen w-full">
-
-    </div>
 </template>
 
 <script setup>

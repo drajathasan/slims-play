@@ -1,5 +1,5 @@
 <template>
-    <nav ref="nav" class=" bg-white w-full flex relative justify-between items-center mx-auto px-8 h-20">
+    <nav ref="nav" class="bg-white w-full flex sticky top-0 z-50 relative justify-between items-center mx-auto px-8 h-20">
         <!-- logo -->
         <div class="inline-flex">
             <a class="_o6689fn" href="/">
@@ -19,7 +19,7 @@
         <!-- end logo -->
 
         <!-- search bar -->
-        <div class="hidden sm:block flex-shrink flex-grow-0 justify-start px-2">
+        <div class="hidden sm:block flex-shrink flex-grow-0 justify-end px-2">
             <div class="inline-block">
                 <div class="inline-flex items-center max-w-full">
                     <div class="flex items-center flex-grow-0 flex-shrink pl-2 relative w-60 border rounded-full px-1  py-1" type="button">
@@ -73,7 +73,11 @@
 </template>
 
 <script setup>
+    import {ref} from 'vue';
+
     window.addEventListener('scroll', onScroll);
+
+    const nav = ref(null)
 
     const props = defineProps({
         siteName: String,
@@ -94,6 +98,13 @@
 
     function onScroll()
     {
-        console.log(window.scrollY)
+        if (window.scrollY > nav.value.scrollHeight)
+        {
+            nav.value.classList.add('shadow-xl');
+        }
+        else
+        {
+            nav.value.classList.remove('shadow-xl');
+        }
     }
 </script>
