@@ -1,8 +1,8 @@
 <template>
     <nav ref="nav" class="bg-white w-full flex sticky top-0 z-50 relative justify-between items-center mx-auto px-8 h-20">
         <!-- logo -->
-        <div class="inline-flex">
-            <a class="_o6689fn" href="/">
+        <div class="inline-flex items-center">
+            <router-link to="/">
                 <div class="hidden md:flex items-center">
                     <svg width="10mm" height="20mm" version="1.1" viewBox="0 0 139.84 151.18" xmlns="http://www.w3.org/2000/svg"><path d="m112.2 437.34h161.29v157.85h-161.29z" fill="none" stroke-width="3.9891"/><g transform="matrix(.90503 0 0 .88702 -341.78 -178.72)"><g><path d="m455.12 284.31c0.62382 29.47 0.61789 36.331 0.25228 65.795l-32.06-36.103 0.0679-72.629z" fill="#34a853"/><path d="m422.42 346.8-33.197-20.484v-18.737c0-10.305 0.26165-18.737 0.58146-18.737 0.3198 0 15.345 9.05 33.389 20.111l32.807 20.111 31.389 17.895-32.141 20.853-32.829-21.013z" fill="#ea4335" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.3858" style="paint-order:stroke fill markers"/><path d="m488.2 346.8 33.197-20.484v-18.737c0-10.305-0.26165-18.737-0.58146-18.737-0.3198 0-15.345 9.05-33.389 20.111l-32.807 20.111-31.389 17.895 32.141 20.853 32.829-21.013z" fill="#4285f4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.3858" style="paint-order:stroke fill markers"/><path d="m455.35 263.12-0.91786-56.786 66.622 51.046 0.0539 68.733 1.2182 1.0126z" fill="#fbbc04"/></g></g></svg>
                     <div class="flex flex-col">
@@ -13,7 +13,7 @@
                 <div class="block md:hidden">
                     <svg width="10mm" height="20mm" version="1.1" viewBox="0 0 139.84 151.18" xmlns="http://www.w3.org/2000/svg"><path d="m112.2 437.34h161.29v157.85h-161.29z" fill="none" stroke-width="3.9891"/><g transform="matrix(.90503 0 0 .88702 -341.78 -178.72)"><g><path d="m455.12 284.31c0.62382 29.47 0.61789 36.331 0.25228 65.795l-32.06-36.103 0.0679-72.629z" fill="#34a853"/><path d="m422.42 346.8-33.197-20.484v-18.737c0-10.305 0.26165-18.737 0.58146-18.737 0.3198 0 15.345 9.05 33.389 20.111l32.807 20.111 31.389 17.895-32.141 20.853-32.829-21.013z" fill="#ea4335" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.3858" style="paint-order:stroke fill markers"/><path d="m488.2 346.8 33.197-20.484v-18.737c0-10.305-0.26165-18.737-0.58146-18.737-0.3198 0-15.345 9.05-33.389 20.111l-32.807 20.111-31.389 17.895 32.141 20.853 32.829-21.013z" fill="#4285f4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.3858" style="paint-order:stroke fill markers"/><path d="m455.35 263.12-0.91786-56.786 66.622 51.046 0.0539 68.733 1.2182 1.0126z" fill="#fbbc04"/></g></g></svg>
                 </div>
-            </a>
+            </router-link>
         </div>
 
         <!-- end logo -->
@@ -22,8 +22,8 @@
         <div class="hidden sm:block flex-shrink flex-grow-0 justify-end px-2">
             <div class="inline-block">
                 <div class="inline-flex items-center max-w-full">
-                    <div class="flex items-center flex-grow-0 flex-shrink pl-2 relative w-60 border rounded-full px-1  py-1" type="button">
-                        <input @focus="maximizeWidth($event)" @blur="minimizeWidth($event)" class="block outline-none ml-2 flex-grow flex-shrink overflow-hidden" placeholder="Start your search"/>
+                    <div class="flex items-center flex-grow-0 flex-shrink pl-2 relative w-[40rem] border rounded-full px-1  py-1" type="button">
+                        <input @focus="maximizeWidth($event)" @blur="minimizeWidth($event)" class="block outline-none ml-2 flex-grow flex-shrink overflow-hidden" placeholder="Masukan kata kunci"/>
                         <div class="flex items-center justify-center relative  h-8 w-8 rounded-full">
                             <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block;fill: none;height: 12px;width: 12px;stroke: currentcolor;stroke-width: 5.33333;overflow: visible;">
                                 <g fill="none"><path d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9"></path></g>
@@ -37,36 +37,36 @@
 
         <!-- login -->
         <div class="flex-initial">
-        <div class="flex justify-end items-center relative">        
-            <div class="flex mr-4 items-center">
-                <a class="inline-block py-2 px-3 hover:bg-gray-200 rounded-full" href="#">
-                    <div class="flex items-center relative cursor-pointer whitespace-nowrap"></div>
-                </a>
-                <div class="block relative">
-                    <button type="button" class="inline-block py-2 px-3 hover:bg-gray-200 rounded-full relative ">
-                        <div class="flex items-center h-5">
-                            <div class="_xpkakx">
-                            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 16px; width: 16px; fill: currentcolor;"><path d="m8.002.25a7.77 7.77 0 0 1 7.748 7.776 7.75 7.75 0 0 1 -7.521 7.72l-.246.004a7.75 7.75 0 0 1 -7.73-7.513l-.003-.245a7.75 7.75 0 0 1 7.752-7.742zm1.949 8.5h-3.903c.155 2.897 1.176 5.343 1.886 5.493l.068.007c.68-.002 1.72-2.365 1.932-5.23zm4.255 0h-2.752c-.091 1.96-.53 3.783-1.188 5.076a6.257 6.257 0 0 0 3.905-4.829zm-9.661 0h-2.75a6.257 6.257 0 0 0 3.934 5.075c-.615-1.208-1.036-2.875-1.162-4.686l-.022-.39zm1.188-6.576-.115.046a6.257 6.257 0 0 0 -3.823 5.03h2.75c.085-1.83.471-3.54 1.059-4.81zm2.262-.424c-.702.002-1.784 2.512-1.947 5.5h3.904c-.156-2.903-1.178-5.343-1.892-5.494l-.065-.007zm2.28.432.023.05c.643 1.288 1.069 3.084 1.157 5.018h2.748a6.275 6.275 0 0 0 -3.929-5.068z"></path></svg>
+            <div class="flex justify-end items-center relative">        
+                <div class="flex mr-4 items-center">
+                    <a class="inline-block py-2 px-3 hover:bg-gray-200 rounded-full" href="#">
+                        <div class="flex items-center relative cursor-pointer whitespace-nowrap"></div>
+                    </a>
+                    <div class="block relative">
+                        <button type="button" class="inline-block py-2 px-3 hover:bg-gray-200 rounded-full relative ">
+                            <div class="flex items-center h-5">
+                                <div class="_xpkakx">
+                                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 16px; width: 16px; fill: currentcolor;"><path d="m8.002.25a7.77 7.77 0 0 1 7.748 7.776 7.75 7.75 0 0 1 -7.521 7.72l-.246.004a7.75 7.75 0 0 1 -7.73-7.513l-.003-.245a7.75 7.75 0 0 1 7.752-7.742zm1.949 8.5h-3.903c.155 2.897 1.176 5.343 1.886 5.493l.068.007c.68-.002 1.72-2.365 1.932-5.23zm4.255 0h-2.752c-.091 1.96-.53 3.783-1.188 5.076a6.257 6.257 0 0 0 3.905-4.829zm-9.661 0h-2.75a6.257 6.257 0 0 0 3.934 5.075c-.615-1.208-1.036-2.875-1.162-4.686l-.022-.39zm1.188-6.576-.115.046a6.257 6.257 0 0 0 -3.823 5.03h2.75c.085-1.83.471-3.54 1.059-4.81zm2.262-.424c-.702.002-1.784 2.512-1.947 5.5h3.904c-.156-2.903-1.178-5.343-1.892-5.494l-.065-.007zm2.28.432.023.05c.643 1.288 1.069 3.084 1.157 5.018h2.748a6.275 6.275 0 0 0 -3.929-5.068z"></path></svg>
+                                </div>
                             </div>
-                        </div>
-                    </button>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="block">
+                    <div class="inline relative">
+                        <button type="button" class="inline-flex items-center relative px-2 border rounded-full hover:shadow-lg">
+                            <div class="pl-1">
+                                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible;"><g fill="none" fill-rule="nonzero"><path d="m2 16h28"></path><path d="m2 24h28"></path><path d="m2 8h28"></path></g></svg>
+                            </div>
+
+                            <div class="block flex-grow-0 flex-shrink-0 h-10 w-12 pl-5">
+                                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 100%; width: 100%; fill: currentcolor;"><path d="m16 .7c-8.437 0-15.3 6.863-15.3 15.3s6.863 15.3 15.3 15.3 15.3-6.863 15.3-15.3-6.863-15.3-15.3-15.3zm0 28c-4.021 0-7.605-1.884-9.933-4.81a12.425 12.425 0 0 1 6.451-4.4 6.507 6.507 0 0 1 -3.018-5.49c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5a6.513 6.513 0 0 1 -3.019 5.491 12.42 12.42 0 0 1 6.452 4.4c-2.328 2.925-5.912 4.809-9.933 4.809z"></path></svg>
+                            </div>
+                        </button>
+                    </div>
                 </div>
             </div>
-
-            <div class="block">
-                <div class="inline relative">
-                    <button type="button" class="inline-flex items-center relative px-2 border rounded-full hover:shadow-lg">
-                        <div class="pl-1">
-                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible;"><g fill="none" fill-rule="nonzero"><path d="m2 16h28"></path><path d="m2 24h28"></path><path d="m2 8h28"></path></g></svg>
-                        </div>
-
-                        <div class="block flex-grow-0 flex-shrink-0 h-10 w-12 pl-5">
-                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 100%; width: 100%; fill: currentcolor;"><path d="m16 .7c-8.437 0-15.3 6.863-15.3 15.3s6.863 15.3 15.3 15.3 15.3-6.863 15.3-15.3-6.863-15.3-15.3-15.3zm0 28c-4.021 0-7.605-1.884-9.933-4.81a12.425 12.425 0 0 1 6.451-4.4 6.507 6.507 0 0 1 -3.018-5.49c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5a6.513 6.513 0 0 1 -3.019 5.491 12.42 12.42 0 0 1 6.452 4.4c-2.328 2.925-5.912 4.809-9.933 4.809z"></path></svg>
-                        </div>
-                    </button>
-                </div>
-            </div>
-        </div>
         </div>
         <!-- end login -->
     </nav>
@@ -86,14 +86,14 @@
 
     function maximizeWidth(e)
     {
-        e.target.parentNode.classList.remove('w-60');
-        e.target.parentNode.classList.add('w-96');
+        e.target.parentNode.classList.remove('w-[40rem]');
+        e.target.parentNode.classList.add('w-[50rem]', 'shadow-md');
     }
 
     function minimizeWidth(e)
     {
-        e.target.parentNode.classList.remove('w-96');
-        e.target.parentNode.classList.add('w-50');
+        e.target.parentNode.classList.remove('w-[50rem]', 'shadow-md');
+        e.target.parentNode.classList.add('w-[40rem]');
     }
 
     function onScroll()

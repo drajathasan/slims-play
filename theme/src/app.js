@@ -1,5 +1,9 @@
 import {createApp} from 'vue';
 import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
+import VueSplide from '@splidejs/vue-splide'
+
+// Css
+import '@splidejs/vue-splide/css';
 
 // Section
 import PlayMain from './sections/play-main.vue';
@@ -15,5 +19,6 @@ const router = createRouter({
 
 const app = createApp({components: {PlayMain}})
 
+app.use(VueSplide)
 app.use(router)
 app.mount('#app')
