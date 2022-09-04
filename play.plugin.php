@@ -16,7 +16,7 @@ include_once __DIR__ . '/vendor/autoload.php';
 $plugin = \SLiMS\Plugins::getInstance();
 
 // registering menus or hook
-$plugin->registerMenu("opac", "play", __DIR__ . "/index.php");
+$plugin->registerMenu("opac", "play", __DIR__ . "/routes.php");
 
 $plugin->register('before_content_load', function(){
     global $sysconf,$page_title;

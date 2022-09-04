@@ -7,9 +7,11 @@ import '@splidejs/vue-splide/css';
 
 // Section
 import PlayMain from './sections/play-main.vue';
+import PlayDetail from './sections/play-detail.vue';
 
 const routes = [
   { path: '/', component: PlayMain, props: true},
+  { path: '/detail/:id', component: PlayDetail, props: true},
 ]
 
 const router = createRouter({

@@ -3,5 +3,5 @@ vendor/
 mix-manifest.json
 package-lock.json
 composer.lock
-dist/app.js
-dist/app.css
+theme/dist/app.js
+theme/dist/app.css

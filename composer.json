@@ -10,7 +10,7 @@
     "license": "GPL-3.0",
     "autoload": {
         "psr-4": {
-            "SLiMS\\Play\\": "lib/"
+            "SLiMS\\Play\\": "app/"
         }
     },
     "authors": [
