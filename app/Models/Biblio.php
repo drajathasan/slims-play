@@ -3,7 +3,7 @@
  * @author Drajat Hasan
  * @email drajathasan20@gmail.com
  * @create date 2022-09-04 14:11:14
- * @modify date 2022-09-04 16:41:49
+ * @modify date 2022-09-05 00:21:12
  * @license GPLv3
  * @desc [description]
  */
@@ -55,6 +55,24 @@ class Biblio extends SLiMSModelContract
 
         // Caching is best way to make cpu not overhead!
         Cache::make('popular.json', array_values($result));
+
+        return array_values($result);
+    }
+
+    public static function perAuthor(string $authorName, int $currentId, int $limit = 5)
+    {
+        $db = DB::getInstance();
+
+        $statement = $db->prepare('select `biblio_id`,`title`,`author`,`gmd`,`image` from `search_biblio` where `biblio_id` != ? and match(`author`) against(? IN NATURAL LANGUAGE MODE) order by `last_update` desc limit ' . $limit);
+        $statement->execute([$currentId, $authorName]);
+
+        $result = [];
+        while ($data = $statement->fetchObject()) {
+            if (!isset($result[$data->biblio_id]))
+            {
+                $result[$data->biblio_id] = $data;
+            }
+        }
 
         return array_values($result);
     }

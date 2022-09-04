@@ -97,13 +97,13 @@
 
     function onScroll()
     {
-        if (window.scrollY > nav.value.scrollHeight)
+        if (window.scrollY > nav.value?.scrollHeight)
         {
-            nav.value.classList.add('shadow-xl');
+            nav.value?.classList.add('shadow-xl');
         }
         else
         {
-            nav.value.classList.remove('shadow-xl');
+            nav.value?.classList.remove('shadow-xl');
         }
     }
 </script>

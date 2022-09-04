@@ -1,5 +1,6 @@
 import {createApp} from 'vue';
 import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
+import {createPinia} from 'pinia'
 import VueSplide from '@splidejs/vue-splide'
 
 // Css
@@ -20,7 +21,9 @@ const router = createRouter({
 })
 
 const app = createApp({components: {PlayMain}})
+const pinia = createPinia()
 
 app.use(VueSplide)
 app.use(router)
+app.use(pinia)
 app.mount('#app')
