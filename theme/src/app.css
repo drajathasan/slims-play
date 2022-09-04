@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.h-poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+.splide__arrow {
+    top: 37% !important;
+}

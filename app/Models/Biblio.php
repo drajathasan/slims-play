@@ -3,7 +3,7 @@
  * @author Drajat Hasan
  * @email drajathasan20@gmail.com
  * @create date 2022-09-04 14:11:14
- * @modify date 2022-09-04 16:00:16
+ * @modify date 2022-09-04 16:41:49
  * @license GPLv3
  * @desc [description]
  */
@@ -16,7 +16,7 @@ use SLiMS\Play\Supports\Cache;
 
 class Biblio extends SLiMSModelContract
 {
-    protected $Table = 'biblio';
+    protected $Table = 'search_biblio';
     protected $PrimaryKey = 'biblio_id';
     protected $Created_at = 'input_date';
     protected $Updated_at = 'last_update';
