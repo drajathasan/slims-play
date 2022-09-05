@@ -1,5 +1,5 @@
 <template>
-    <play-navbar :site-name="props.siteName" :site-subname="props.siteSubname"/>
+    <play-navbar :site-name="props.siteName" :site-subname="props.siteSubname" :site-logo="props.siteLogo"/>
     <div class="w-full flex flex-col items-center my-14">
         <play-book-popular/>
     </div>
@@ -12,5 +12,6 @@
     const props = defineProps({
         siteName: String,
         siteSubname: String,
+        siteLogo: String
     })
 </script>

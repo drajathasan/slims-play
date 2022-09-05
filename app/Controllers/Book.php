@@ -3,7 +3,7 @@
  * @author Drajat Hasan
  * @email drajathasan20@gmail.com
  * @create date 2022-09-04 14:23:20
- * @modify date 2022-09-05 00:21:46
+ * @modify date 2022-09-05 08:57:03
  * @license GPLv3
  * @desc [description]
  */
@@ -29,9 +29,10 @@ class Book
     public function getBookPerAuthor(Request $request)
     {
         $authorName = $request->query('name');
-        $currentBiblioId = $request->query('id');
+        $currentBiblioId = $request->query('id')??0;
         $limit = $request->query('limit')??5;
-        $dataList = Biblio::perAuthor($authorName, $currentBiblioId, $limit);
+        
+        $dataList = Biblio::perAuthor($authorName, $currentBiblioId, (int)$limit);
 
         return response()->json(['status' => (bool)count($dataList), 'data' => $dataList]);
     }

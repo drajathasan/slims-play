@@ -3,7 +3,7 @@
  * @author Drajat Hasan
  * @email drajathasan20@gmail.com
  * @create date 2022-09-04 14:11:14
- * @modify date 2022-09-05 00:21:12
+ * @modify date 2022-09-05 08:46:23
  * @license GPLv3
  * @desc [description]
  */
@@ -62,6 +62,8 @@ class Biblio extends SLiMSModelContract
     public static function perAuthor(string $authorName, int $currentId, int $limit = 5)
     {
         $db = DB::getInstance();
+
+        if ($limit > 50) $limit = 50;
 
         $statement = $db->prepare('select `biblio_id`,`title`,`author`,`gmd`,`image` from `search_biblio` where `biblio_id` != ? and match(`author`) against(? IN NATURAL LANGUAGE MODE) order by `last_update` desc limit ' . $limit);
         $statement->execute([$currentId, $authorName]);

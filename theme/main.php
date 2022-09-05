@@ -3,7 +3,7 @@
  * @author Drajat Hasan
  * @email drajathasan20@gmail.com
  * @create date 2022-08-30 19:44:50
- * @modify date 2022-09-04 23:50:13
+ * @modify date 2022-09-05 12:24:51
  * @license GPLv3
  * @desc [description]
  */
@@ -27,7 +27,7 @@ defined('INDEX_AUTH') or die('Direct access is not allowed!');
     </head>
     <body>
         <section id="app">
-            <router-view site-name="<?= $sysconf['library_name'] ?>" site-subname="<?= $sysconf['library_subname'] ?>"></router-view>
+            <router-view site-name="<?= $sysconf['library_name'] ?>" site-subname="<?= $sysconf['library_subname'] ?>" site-logo="<?= $sysconf['logo_image']??'none' ?>"></router-view>
         </section>
         <script src="plugins/<?= $pluginDirname ?>/theme/dist/app.js?v=<?= date('this') ?>"></script>
     </body>

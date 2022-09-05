@@ -4,14 +4,16 @@
         <div class="inline-flex items-center">
             <router-link to="/">
                 <div class="hidden md:flex items-center">
-                    <svg width="10mm" height="20mm" version="1.1" viewBox="0 0 139.84 151.18" xmlns="http://www.w3.org/2000/svg"><path d="m112.2 437.34h161.29v157.85h-161.29z" fill="none" stroke-width="3.9891"/><g transform="matrix(.90503 0 0 .88702 -341.78 -178.72)"><g><path d="m455.12 284.31c0.62382 29.47 0.61789 36.331 0.25228 65.795l-32.06-36.103 0.0679-72.629z" fill="#34a853"/><path d="m422.42 346.8-33.197-20.484v-18.737c0-10.305 0.26165-18.737 0.58146-18.737 0.3198 0 15.345 9.05 33.389 20.111l32.807 20.111 31.389 17.895-32.141 20.853-32.829-21.013z" fill="#ea4335" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.3858" style="paint-order:stroke fill markers"/><path d="m488.2 346.8 33.197-20.484v-18.737c0-10.305-0.26165-18.737-0.58146-18.737-0.3198 0-15.345 9.05-33.389 20.111l-32.807 20.111-31.389 17.895 32.141 20.853 32.829-21.013z" fill="#4285f4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.3858" style="paint-order:stroke fill markers"/><path d="m455.35 263.12-0.91786-56.786 66.622 51.046 0.0539 68.733 1.2182 1.0126z" fill="#fbbc04"/></g></g></svg>
+                    <svg v-if="props.siteLogo === 'none'" width="10mm" height="20mm" version="1.1" viewBox="0 0 139.84 151.18" xmlns="http://www.w3.org/2000/svg"><path d="m112.2 437.34h161.29v157.85h-161.29z" fill="none" stroke-width="3.9891"/><g transform="matrix(.90503 0 0 .88702 -341.78 -178.72)"><g><path d="m455.12 284.31c0.62382 29.47 0.61789 36.331 0.25228 65.795l-32.06-36.103 0.0679-72.629z" fill="#34a853"/><path d="m422.42 346.8-33.197-20.484v-18.737c0-10.305 0.26165-18.737 0.58146-18.737 0.3198 0 15.345 9.05 33.389 20.111l32.807 20.111 31.389 17.895-32.141 20.853-32.829-21.013z" fill="#ea4335" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.3858" style="paint-order:stroke fill markers"/><path d="m488.2 346.8 33.197-20.484v-18.737c0-10.305-0.26165-18.737-0.58146-18.737-0.3198 0-15.345 9.05-33.389 20.111l-32.807 20.111-31.389 17.895 32.141 20.853 32.829-21.013z" fill="#4285f4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.3858" style="paint-order:stroke fill markers"/><path d="m455.35 263.12-0.91786-56.786 66.622 51.046 0.0539 68.733 1.2182 1.0126z" fill="#fbbc04"/></g></g></svg>
+                    <img :src="setLogo(`images/default/${props.siteLogo}`)" class="w-10 h-10" v-else/>
                     <div class="flex flex-col">
-                        <h1 class="mx-2 text-xl font-bold text-gray-800 leading-[1.2rem]">{{ siteName }}</h1>
+                        <h1 class="mx-2 text-xl font-bold text-gray-800 leading-[1.2rem] h-poppins">{{ siteName }}</h1>
                         <h2 class="mx-2 text-xs">{{ siteSubname }}</h2>
                     </div>
                 </div>
                 <div class="block md:hidden">
-                    <svg width="10mm" height="20mm" version="1.1" viewBox="0 0 139.84 151.18" xmlns="http://www.w3.org/2000/svg"><path d="m112.2 437.34h161.29v157.85h-161.29z" fill="none" stroke-width="3.9891"/><g transform="matrix(.90503 0 0 .88702 -341.78 -178.72)"><g><path d="m455.12 284.31c0.62382 29.47 0.61789 36.331 0.25228 65.795l-32.06-36.103 0.0679-72.629z" fill="#34a853"/><path d="m422.42 346.8-33.197-20.484v-18.737c0-10.305 0.26165-18.737 0.58146-18.737 0.3198 0 15.345 9.05 33.389 20.111l32.807 20.111 31.389 17.895-32.141 20.853-32.829-21.013z" fill="#ea4335" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.3858" style="paint-order:stroke fill markers"/><path d="m488.2 346.8 33.197-20.484v-18.737c0-10.305-0.26165-18.737-0.58146-18.737-0.3198 0-15.345 9.05-33.389 20.111l-32.807 20.111-31.389 17.895 32.141 20.853 32.829-21.013z" fill="#4285f4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.3858" style="paint-order:stroke fill markers"/><path d="m455.35 263.12-0.91786-56.786 66.622 51.046 0.0539 68.733 1.2182 1.0126z" fill="#fbbc04"/></g></g></svg>
+                    <svg v-if="props.siteLogo === 'none'" width="10mm" height="20mm" version="1.1" viewBox="0 0 139.84 151.18" xmlns="http://www.w3.org/2000/svg"><path d="m112.2 437.34h161.29v157.85h-161.29z" fill="none" stroke-width="3.9891"/><g transform="matrix(.90503 0 0 .88702 -341.78 -178.72)"><g><path d="m455.12 284.31c0.62382 29.47 0.61789 36.331 0.25228 65.795l-32.06-36.103 0.0679-72.629z" fill="#34a853"/><path d="m422.42 346.8-33.197-20.484v-18.737c0-10.305 0.26165-18.737 0.58146-18.737 0.3198 0 15.345 9.05 33.389 20.111l32.807 20.111 31.389 17.895-32.141 20.853-32.829-21.013z" fill="#ea4335" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.3858" style="paint-order:stroke fill markers"/><path d="m488.2 346.8 33.197-20.484v-18.737c0-10.305-0.26165-18.737-0.58146-18.737-0.3198 0-15.345 9.05-33.389 20.111l-32.807 20.111-31.389 17.895 32.141 20.853 32.829-21.013z" fill="#4285f4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.3858" style="paint-order:stroke fill markers"/><path d="m455.35 263.12-0.91786-56.786 66.622 51.046 0.0539 68.733 1.2182 1.0126z" fill="#fbbc04"/></g></g></svg>
+                    <img :src="setLogo(`images/default/${props.siteLogo}`)" class="w-10 h-10" v-else/>
                 </div>
             </router-link>
         </div>
@@ -72,15 +74,19 @@
 </template>
 
 <script setup>
-    import {ref} from 'vue';
+    import {ref,onMounted} from 'vue'
+    import {useRoute,useRouter} from 'vue-router'
 
-    window.addEventListener('scroll', onScroll);
+    window.addEventListener('scroll', onScroll)
 
     const nav = ref(null)
+    const route = useRoute()
+    const router = useRouter()
 
     const props = defineProps({
         siteName: String,
         siteSubname: String,
+        siteLogo: String
     })
 
     function maximizeWidth(e)
@@ -105,5 +111,10 @@
         {
             nav.value?.classList.remove('shadow-xl');
         }
+    }
+
+    function setLogo(logopath)
+    {
+        return window.location.origin + '/' + logopath;
     }
 </script>
