@@ -3,19 +3,26 @@
  * @author Drajat Hasan
  * @email drajathasan20@gmail.com
  * @create date 2022-09-04 14:06:24
- * @modify date 2022-09-04 23:53:40
+ * @modify date 2022-09-06 14:54:04
  * @license GPLv3
  * @desc [description]
  */
 
-use Zein\Http\Router;
+use Zein\Http\Router as Route;
 
-Router::get('/', function(){
+Route::get('/', function(){
     return 'Hai';
 });
 
-Router::get('/book/popular', [\SLiMS\Play\Controllers\Book::class, 'getPopular']);
-Router::get('/book/detail/{id}', [\SLiMS\Play\Controllers\Book::class, 'getDetail']);
-Router::get('/book/author', [\SLiMS\Play\Controllers\Book::class, 'getBookPerAuthor']);
+Route::controller(\SLiMS\Play\Controllers\Book::class)->group(function(){
+    Route::prefix('/book')->group(function(){
+        Route::get('/popular', 'getPopular');
+        Route::get('/new', 'getNew');
+        Route::get('/promote', 'getPromoted');
+        Route::get('/detail/{id}', 'getDetail');
+        Route::get('/author', 'getBookPerAuthor');
+        Route::get('/search', 'searchData');
+    });
+});
 
-Router::run();
+Route::run();

@@ -24,7 +24,7 @@
             <div class="inline-block">
                 <div class="inline-flex items-center max-w-full">
                     <div class="flex items-center flex-grow-0 flex-shrink pl-2 relative w-[40rem] border rounded-full px-1  py-1" type="button">
-                        <input @focus="maximizeWidth($event)" @blur="minimizeWidth($event)" class="block outline-none ml-2 flex-grow flex-shrink overflow-hidden" placeholder="Masukan kata kunci"/>
+                        <input @focus="maximizeWidth($event)" @blur="minimizeWidth($event)" @keypress="search($event)" :value="getKeywords()" class="block outline-none ml-2 flex-grow flex-shrink overflow-hidden" placeholder="Masukan kata kunci"/>
                         <div class="flex items-center justify-center relative  h-8 w-8 rounded-full">
                             <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block;fill: none;height: 12px;width: 12px;stroke: currentcolor;stroke-width: 5.33333;overflow: visible;">
                                 <g fill="none"><path d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9"></path></g>
@@ -74,14 +74,18 @@
 </template>
 
 <script setup>
-    import {ref,onMounted} from 'vue'
+    import {ref,onMounted,reactive} from 'vue'
     import {useRoute,useRouter} from 'vue-router'
+
+    // state
+    import {useSearch} from '../store/search.js'
 
     window.addEventListener('scroll', onScroll)
 
     const nav = ref(null)
     const route = useRoute()
     const router = useRouter()
+    const state = useSearch()
 
     const props = defineProps({
         siteName: String,
@@ -116,5 +120,29 @@
     function setLogo(logopath)
     {
         return window.location.origin + '/' + logopath;
+    }
+
+    function getKeywords()
+    {
+        state.keywords = route.query?.keywords?.replace(/['"]+/g, '').replace(/(<([^>]+)>)/gi, "")
+        return state.keywords
+    }
+
+    function search(e)
+    {
+        if (e.key === 'Enter')
+        {
+            if (route.path !== '/search')
+            {
+                state.keywords = e.target.value
+                router.push({path: '/search', query: {keywords: e.target.value}})
+            }
+            else
+            {
+                route.query.keywords = e.target.value
+                state.keywords = e.target.value
+                state.searchData()
+            }
+        }
     }
 </script>

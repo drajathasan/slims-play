@@ -1,6 +1,6 @@
 <template>
-    <div class="w-8/12 min-h-[20rem] my-5 flex flex-col">
-        <strong class="text-xl leading-[1.2rem]">Buku Populer</strong>
+    <div class="w-8/12 min-h-[20rem] my-3 flex flex-col">
+        <strong class="text-xl leading-[1.5rem]">Buku Populer</strong>
         <small class="text-xs">Bacaan favorit banyak orang</small>
         <Splide v-if="data.popularList.length > 0" :options="data.splideOptions" class="my-5" aria-label="My Favorite Images">
             <SplideSlide v-for="img in data.popularList" class="flex flex-col items-center">

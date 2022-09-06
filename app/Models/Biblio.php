@@ -3,7 +3,7 @@
  * @author Drajat Hasan
  * @email drajathasan20@gmail.com
  * @create date 2022-09-04 14:11:14
- * @modify date 2022-09-05 08:46:23
+ * @modify date 2022-09-06 16:26:55
  * @license GPLv3
  * @desc [description]
  */
@@ -77,5 +77,30 @@ class Biblio extends SLiMSModelContract
         }
 
         return array_values($result);
+    }
+
+    public static function getNewCollection()
+    {
+        return self::select('title','image','biblio_id')->orderBy('input_date', 'desc')->limit(10)->get();
+    }
+
+    public static function getPromotedCollection()
+    {
+        return self::select('title','image','biblio_id')->where('promoted', '0')->orderBy('last_update', 'desc')->limit(10)->get();
+    }
+
+    public static function searchData(string $keywords)
+    {
+        $db = DB::getInstance();
+
+        $statement = $db->prepare('select `title`,`image`,`gmd`,`biblio_id`, `author` from `search_biblio` where `title` like ? order by `last_update` desc limit 30');
+        $statement->execute(['%'.$keywords.'%']);
+
+        $result = [];
+        while ($data = $statement->fetchObject()) {
+            $result[] = $data;
+        }
+
+        return $result;
     }
 }

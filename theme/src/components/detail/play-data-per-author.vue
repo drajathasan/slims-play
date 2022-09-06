@@ -15,7 +15,7 @@
                 <img class="w-[88px] h-[132px] rounded-lg shadow-lg cursor-pointer hover:shadow-2xl shadow-2xl" :title="otherBook.title" loading="lazy" :src="`https://dlibrary.ittelkom-pwt.ac.id/lib/minigalnano/createthumb.php?filename=../../images/docs/${otherBook.image}&width=250`" alt="Sample 1">
                 <div class="flex flex-col ml-5">
                     <h4 class="text-lg font-bold text-gray-600  h-poppins">{{ otherBook.title }}</h4>
-                    <span class="text-sm">{{ otherBook.author }}</span>
+                    <span class="text-sm">{{ shortAuthor(otherBook.author) }}</span>
                     <small>{{ otherBook.gmd }}</small>
                 </div>
             </div>
@@ -45,6 +45,14 @@
         otherAuthorData: {},
         ready: false
     })
+
+    function shortAuthor(author)
+    {
+        author = author?.split(' - ')
+
+        if (author.length > 1) return author[0] + ', dkk'
+        return author[0]
+    }
 
     const getAnotherBook = async () => {
         try {

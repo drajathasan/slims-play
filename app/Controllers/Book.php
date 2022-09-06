@@ -3,7 +3,7 @@
  * @author Drajat Hasan
  * @email drajathasan20@gmail.com
  * @create date 2022-09-04 14:23:20
- * @modify date 2022-09-05 08:57:03
+ * @modify date 2022-09-06 15:45:03
  * @license GPLv3
  * @desc [description]
  */
@@ -24,6 +24,22 @@ class Book
     {
         $data = Biblio::find($id);
         return response()->json(['status' => (is_null($data) ? false : true), 'result' => $data]);
+    }
+
+    public function getNew()
+    {
+        return response()->json(['status' => true, 'data' => Biblio::getNewCollection()]);
+    }
+
+    public function getPromoted()
+    {
+        return response()->json(['status' => true, 'data' => Biblio::getPromotedCollection()]);
+    }
+
+    public function searchData(Request $request)
+    {
+        $keywords = $request->query('keywords')??'';
+        return response()->json(['status' => true, 'data' => Biblio::searchData($keywords)]);
     }
 
     public function getBookPerAuthor(Request $request)

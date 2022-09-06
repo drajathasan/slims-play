@@ -10,11 +10,13 @@ import '@splidejs/vue-splide/css';
 import PlayMain from './sections/play-main.vue';
 import PlayDetail from './sections/play-detail.vue';
 import PlayAuthor from './sections/play-author.vue';
+import PlaySearch from './sections/play-search.vue';
 
 const routes = [
   { path: '/', component: PlayMain, props: true},
   { path: '/detail/:id', component: PlayDetail, props: true},
   { path: '/author/:name', component: PlayAuthor, props: true},
+  { path: '/search/', component: PlaySearch, props: true},
 ]
 
 const router = createRouter({

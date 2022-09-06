@@ -9,8 +9,8 @@
             <div class="flex flex-row">
                 <img class="w-[88px] h-[132px] rounded-lg shadow-lg cursor-pointer hover:shadow-2xl shadow-2xl" :title="book.title" loading="lazy" :src="`https://dlibrary.ittelkom-pwt.ac.id/lib/minigalnano/createthumb.php?filename=../../images/docs/${book.image}&width=250`" alt="Sample 1">
                 <div class="flex flex-col ml-2">
-                    <h4 class="text-lg font-bold text-gray-600 h-poppins">{{ book.title }}</h4>
-                    <span class="text-sm">{{ book.author }}</span>
+                    <h4 class="text-lg font-bold text-gray-600 h-poppins">{{ book.title?.substr(0,50) }}...</h4>
+                    <span class="text-sm">{{ shortAuthor(book.author) }}</span>
                     <p>{{ book.notes }}</p>
                     <small>{{ book.gmd }}</small>
                 </div>
@@ -32,4 +32,12 @@
             default: 'Buku oleh'
         },
     })
+
+    function shortAuthor(author)
+    {
+        author = author?.split(' - ')
+
+        if (author.length > 1) return author[0] + ', dkk'
+        return author[0]
+    }
 </script>
