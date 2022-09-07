@@ -3,7 +3,7 @@
  * @author Drajat Hasan
  * @email drajathasan20@gmail.com
  * @create date 2022-09-04 14:06:24
- * @modify date 2022-09-06 14:54:04
+ * @modify date 2022-09-07 16:16:34
  * @license GPLv3
  * @desc [description]
  */
@@ -22,6 +22,7 @@ Route::controller(\SLiMS\Play\Controllers\Book::class)->group(function(){
         Route::get('/detail/{id}', 'getDetail');
         Route::get('/author', 'getBookPerAuthor');
         Route::get('/search', 'searchData');
+        Route::get('/items/{id}', 'getItemsDetail');
     });
 });
 

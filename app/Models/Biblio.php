@@ -3,7 +3,7 @@
  * @author Drajat Hasan
  * @email drajathasan20@gmail.com
  * @create date 2022-09-04 14:11:14
- * @modify date 2022-09-06 16:26:55
+ * @modify date 2022-09-07 16:27:19
  * @license GPLv3
  * @desc [description]
  */
@@ -102,5 +102,12 @@ class Biblio extends SLiMSModelContract
         }
 
         return $result;
+    }
+
+    public function getItems()
+    {
+        $db = DB::getInstance();
+
+        // $statement = $db->prepare()
     }
 }
