@@ -1,7 +1,7 @@
 <template>
     <!-- Main modal -->
-    <div id="default-modal" data-modal-show="true" aria-hidden="true" :class="`${(modal.ready ? `flex` : `hidden`)} overflow-x-hidden overflow-y-auto fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center bg-slate-800/75`">
-        <div class="relative w-full max-w-2xl px-4 h-full md:h-auto">
+    <div id="default-modal" data-modal-show="true" aria-hidden="true" :class="`${(modal.ready ? `flex` : `hidden`)} overflow-x-hidden overflow-y-auto fixed m-h-screen top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center bg-slate-800/75`">
+        <div class="relative w-full max-w-4xl px-4 h-full md:h-auto">
             <!-- Modal content -->
             <div class="bg-white rounded-lg shadow relative dark:bg-gray-700">
                 <!-- Modal header -->

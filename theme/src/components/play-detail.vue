@@ -1,6 +1,6 @@
 <template>
     <section class="w-full flex justify-center my-12">
-        <div class="2xl:w-7/12 4xl:w-5/12 min-h-[20rem] flex flex-col">
+        <div class="w-7/12 2xl:w-7/12 4xl:w-5/12 min-h-[20rem] flex flex-col">
             <div class="flex flex-col w-[90%]">
                 <h1 class="text-[40pt] lg:leading-[4rem] h-poppins font-bold">{{ result.title }}</h1>
                 <span class="mt-8 font-bold text-blue-600">

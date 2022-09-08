@@ -3,7 +3,7 @@
  * @author Drajat Hasan
  * @email drajathasan20@gmail.com
  * @create date 2022-09-04 14:11:14
- * @modify date 2022-09-07 16:27:19
+ * @modify date 2022-09-08 15:54:41
  * @license GPLv3
  * @desc [description]
  */
@@ -108,6 +108,6 @@ class Biblio extends SLiMSModelContract
     {
         $db = DB::getInstance();
 
-        // $statement = $db->prepare()
+        // $statement = $db->prepare('select `i`.`item_code`,`i`.`call_number`, (select )')
     }
 }
