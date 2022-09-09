@@ -3,7 +3,7 @@
  * @author Drajat Hasan
  * @email drajathasan20@gmail.com
  * @create date 2022-09-04 14:11:14
- * @modify date 2022-09-08 15:54:41
+ * @modify date 2022-09-09 18:10:29
  * @license GPLv3
  * @desc [description]
  */
@@ -104,10 +104,26 @@ class Biblio extends SLiMSModelContract
         return $result;
     }
 
-    public function getItems()
+    public static function getItems($id)
     {
         $db = DB::getInstance();
 
-        // $statement = $db->prepare('select `i`.`item_code`,`i`.`call_number`, (select )')
+        $statement = $db->prepare('select 
+                                        `i`.`item_code`,
+                                        `i`.`call_number`,
+                                        `mis`.`item_status_name`,
+                                        COALESCE((select `l`.`due_date` from `loan` as `l` where `l`.`item_code` = `i`.`item_code` and `l`.`is_return` = 0), \'Tersedia\') as `DueDate`
+                                    from `item` as `i` 
+                                    left join `mst_item_status` as `mis` on `mis`.`item_status_id` = `i`.`item_status_id`
+                                    where `i`.`biblio_id` = ?');
+
+        $statement->execute([$id]);
+
+        $result = [];
+        while ($data = $statement->fetchObject()) {
+            $result[] = $data;
+        }
+
+        return $result;
     }
 }

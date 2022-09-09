@@ -3,7 +3,7 @@
  * @author Drajat Hasan
  * @email drajathasan20@gmail.com
  * @create date 2022-09-04 14:23:20
- * @modify date 2022-09-07 16:16:42
+ * @modify date 2022-09-09 18:00:34
  * @license GPLv3
  * @desc [description]
  */
@@ -55,6 +55,6 @@ class Book
 
     public function getItemsDetail($id)
     {
-        
+        return response()->json(['status' => true, 'data' => Biblio::getItems($id)]);
     }
 }
