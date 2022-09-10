@@ -47,9 +47,9 @@
                     </div>
                 </div>
 
-                <div class="block">
+                <div class="hidden">
                     <div class="inline relative">
-                        <router-link to="/member/" class="inline-flex items-center relative px-2 border rounded-full hover:shadow-lg">
+                        <router-link to="/" class="inline-flex items-center relative px-2 border rounded-full hover:shadow-lg">
                             <div class="pl-1">
                                 <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible;"><g fill="none" fill-rule="nonzero"><path d="m2 16h28"></path><path d="m2 24h28"></path><path d="m2 8h28"></path></g></svg>
                             </div>

@@ -4,13 +4,13 @@ import {createPinia} from 'pinia'
 import VueSplide from '@splidejs/vue-splide'
 
 // Css
-import '@splidejs/vue-splide/css';
+import '@splidejs/vue-splide/css'
 
 // Section
-import PlayMain from './sections/play-main.vue';
-import PlayDetail from './sections/play-detail.vue';
-import PlayAuthor from './sections/play-author.vue';
-import PlaySearch from './sections/play-search.vue';
+import PlayMain from './sections/play-main.vue'
+import PlayDetail from './sections/play-detail.vue'
+import PlayAuthor from './sections/play-author.vue'
+import PlaySearch from './sections/play-search.vue'
 
 const routes = [
   { path: '/', component: PlayMain, props: true},
