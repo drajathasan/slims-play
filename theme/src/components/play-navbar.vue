@@ -12,7 +12,7 @@
                     </div>
                 </div>
                 <div class="block md:hidden">
-                    <svg v-if="props.siteLogo === 'none'" width="10mm" height="20mm" version="1.1" viewBox="0 0 139.84 151.18" xmlns="http://www.w3.org/2000/svg"><path d="m112.2 437.34h161.29v157.85h-161.29z" fill="none" stroke-width="3.9891"/><g transform="matrix(.90503 0 0 .88702 -341.78 -178.72)"><g><path d="m455.12 284.31c0.62382 29.47 0.61789 36.331 0.25228 65.795l-32.06-36.103 0.0679-72.629z" fill="#34a853"/><path d="m422.42 346.8-33.197-20.484v-18.737c0-10.305 0.26165-18.737 0.58146-18.737 0.3198 0 15.345 9.05 33.389 20.111l32.807 20.111 31.389 17.895-32.141 20.853-32.829-21.013z" fill="#ea4335" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.3858" style="paint-order:stroke fill markers"/><path d="m488.2 346.8 33.197-20.484v-18.737c0-10.305-0.26165-18.737-0.58146-18.737-0.3198 0-15.345 9.05-33.389 20.111l-32.807 20.111-31.389 17.895 32.141 20.853 32.829-21.013z" fill="#4285f4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.3858" style="paint-order:stroke fill markers"/><path d="m455.35 263.12-0.91786-56.786 66.622 51.046 0.0539 68.733 1.2182 1.0126z" fill="#fbbc04"/></g></g></svg>
+                    <svg v-if="props.siteLogo === 'none' || props.siteLogo.length === 0" width="10mm" height="20mm" version="1.1" viewBox="0 0 139.84 151.18" xmlns="http://www.w3.org/2000/svg"><path d="m112.2 437.34h161.29v157.85h-161.29z" fill="none" stroke-width="3.9891"/><g transform="matrix(.90503 0 0 .88702 -341.78 -178.72)"><g><path d="m455.12 284.31c0.62382 29.47 0.61789 36.331 0.25228 65.795l-32.06-36.103 0.0679-72.629z" fill="#34a853"/><path d="m422.42 346.8-33.197-20.484v-18.737c0-10.305 0.26165-18.737 0.58146-18.737 0.3198 0 15.345 9.05 33.389 20.111l32.807 20.111 31.389 17.895-32.141 20.853-32.829-21.013z" fill="#ea4335" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.3858" style="paint-order:stroke fill markers"/><path d="m488.2 346.8 33.197-20.484v-18.737c0-10.305-0.26165-18.737-0.58146-18.737-0.3198 0-15.345 9.05-33.389 20.111l-32.807 20.111-31.389 17.895 32.141 20.853 32.829-21.013z" fill="#4285f4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.3858" style="paint-order:stroke fill markers"/><path d="m455.35 263.12-0.91786-56.786 66.622 51.046 0.0539 68.733 1.2182 1.0126z" fill="#fbbc04"/></g></g></svg>
                     <img :src="setLogo(`images/default/${props.siteLogo}`)" class="w-10 h-10" v-else/>
                 </div>
             </router-link>
@@ -20,10 +20,10 @@
         <!-- end logo -->
 
         <!-- search bar -->
-        <div class="hidden sm:block flex-shrink flex-grow-0 justify-end px-2">
+        <div class="sm:block flex-shrink flex-grow-0 justify-end px-2">
             <div class="inline-block">
                 <div class="inline-flex items-center max-w-full">
-                    <div class="flex items-center flex-grow-0 flex-shrink pl-2 relative w-[40rem] border rounded-full px-1  py-1" type="button">
+                    <div class="flex items-center flex-grow-0 flex-shrink pl-2 relative w-fit lg:w-[40rem] border rounded-full px-1  py-1" type="button">
                         <input @focus="maximizeWidth($event)" @blur="minimizeWidth($event)" @keypress="search($event)" :value="getKeywords()" class="block outline-none ml-2 flex-grow flex-shrink overflow-hidden" placeholder="Masukan kata kunci"/>
                         <div class="flex items-center justify-center relative  h-8 w-8 rounded-full">
                             <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block;fill: none;height: 12px;width: 12px;stroke: currentcolor;stroke-width: 5.33333;overflow: visible;">
@@ -90,14 +90,25 @@
 
     function maximizeWidth(e)
     {
-        e.target.parentNode.classList.remove('w-[40rem]');
-        e.target.parentNode.classList.add('w-[50rem]', 'shadow-md');
+        if (window.location.innerWidth > 1024) {
+            e.target.parentNode.classList.remove('w-[40rem]');
+            e.target.parentNode.classList.add('w-[50rem]', 'shadow-md');
+        }
+        else
+        {
+        }
     }
 
     function minimizeWidth(e)
     {
-        e.target.parentNode.classList.remove('w-[50rem]', 'shadow-md');
-        e.target.parentNode.classList.add('w-[40rem]');
+        if (window.location.innerWidth > 1024) {
+            e.target.parentNode.classList.remove('w-[50rem]', 'shadow-md');
+            e.target.parentNode.classList.add('w-[40rem]');
+        }
+        else
+        {
+            e.target.parentNode.classList.add('w-fit');
+        }
     }
 
     function onScroll()

@@ -8,9 +8,9 @@
                 </h3>
             </div>
             <div class="flex flex-wrap">
-                <router-link v-if="state.ready" class="flex flex-col my-2 hover:shadow-xl cursor-pointer p-5 w-4/12" v-for="book in state.result" :to="`/detail/${book.biblio_id}`">
+                <router-link v-if="state.ready" class="flex flex-col my-2 hover:shadow-xl cursor-pointer p-5 w-full lg:w-4/12" v-for="book in state.result" :to="`/detail/${book.biblio_id}`">
                     <div class="flex flex-row">
-                        <img class="w-[88px] h-[132px] rounded-lg shadow-lg cursor-pointer hover:shadow-2xl shadow-2xl" :title="book.title" loading="lazy" :src="`https://dlibrary.ittelkom-pwt.ac.id/lib/minigalnano/createthumb.php?filename=../../images/docs/${book.image}&width=250`" alt="Sample 1">
+                        <play-img class="w-[88px] h-[132px] rounded-lg shadow-lg cursor-pointer hover:shadow-2xl shadow-2xl" :title="book.title" :src="`${book.image}&width=250`"/>
                         <div class="flex flex-col ml-2">
                             <h4 class="text-lg font-bold text-gray-600 h-poppins">{{ book.title?.substr(0,50) }}...</h4>
                             <span class="text-sm">{{ shortAuthor(book.author) }}</span>
@@ -27,6 +27,8 @@
 <script setup>
     import {reactive,onMounted} from 'vue'
     import { useRouter, useRoute } from 'vue-router'
+
+    import PlayImg from '../components/play-image.vue'
 
     // state
     import {useSearch} from '../store/search.js'

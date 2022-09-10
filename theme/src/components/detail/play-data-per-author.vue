@@ -10,9 +10,9 @@
         </router-link>
     </div>
     <div class="flex flex-wrap">
-        <a v-if="data.ready" class="flex flex-col my-2 hover:shadow-xl cursor-pointer p-5 w-4/12" v-for="otherBook in data.otherAuthorData" @click="redirectTo(otherBook.biblio_id)">
+        <a v-if="data.ready" class="flex flex-col my-2 hover:shadow-xl cursor-pointer p-5 w-full lg:w-4/12" v-for="otherBook in data.otherAuthorData" @click="redirectTo(otherBook.biblio_id)">
             <div class="flex flex-row">
-                <img class="w-[88px] h-[132px] rounded-lg shadow-lg cursor-pointer hover:shadow-2xl shadow-2xl" :title="otherBook.title" loading="lazy" :src="`https://dlibrary.ittelkom-pwt.ac.id/lib/minigalnano/createthumb.php?filename=../../images/docs/${otherBook.image}&width=250`" alt="Sample 1">
+                <play-img class="w-[88px] h-[132px] rounded-lg shadow-lg cursor-pointer hover:shadow-2xl shadow-2xl" :title="otherBook.title" :src="`${otherBook.image}&width=250`"/>
                 <div class="flex flex-col ml-5">
                     <h4 class="text-lg font-bold text-gray-600  h-poppins">{{ otherBook.title }}</h4>
                     <span class="text-sm">{{ shortAuthor(otherBook.author) }}</span>
@@ -27,6 +27,7 @@
     import { reactive, onMounted, getCurrentInstance } from 'vue'
     import { useRoute, useRouter } from 'vue-router'
     import {useTriggerId} from '../../store/biblio.js'
+    import PlayImg from '../play-image.vue'
 
     const route = useRoute()
     const router = useRouter()

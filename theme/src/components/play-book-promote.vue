@@ -5,8 +5,8 @@
         <Splide v-if="data.promote.length > 0" :options="data.splideOptions" class="my-5" aria-label="My Favorite Images">
             <SplideSlide v-for="img in data.promote" class="flex flex-col items-center">
                 <router-link :to="`/detail/${img.Data.biblio_id}`" class="flex flex-col items-center mx-2">
-                    <img class="w-[196px] xl:h-[200px] 2xl:h-[250px] 4xl:h-[306px] rounded-lg shadow-lg cursor-pointer hover:shadow-2xl" :title="img.Data.title" loading="lazy" :src="`https://dlibrary.ittelkom-pwt.ac.id/lib/minigalnano/createthumb.php?filename=../../images/docs/${img.Data.image}&width=250`" alt="Sample 1">
-                    <span class="text-sm text-center my-2">{{ img.Data.title }}</span>
+                    <play-img class="w-[196px] xl:h-[200px] 2xl:h-[250px] 4xl:h-[306px] rounded-lg shadow-lg cursor-pointer hover:shadow-2xl" :title="img.Data.title" :src="`${img.Data.image}&width=250`"/>
+                    <span class="text-sm text-center my-2">{{ img.Data.title.substr(1,20) }}...</span>
                 </router-link>
             </SplideSlide>
         </Splide>
@@ -20,10 +20,17 @@
     import { onMounted, reactive } from 'vue'
     import { Splide, SplideSlide } from '@splidejs/vue-splide'
 
+    import PlayImg from './play-image.vue'
+
     const data = reactive({
         splideOptions: {
             perPage: 6,
-            rewind : true
+            rewind : true,
+            breakpoints: {
+                640: {
+                    perPage: 2,
+                },
+            }
         },
         promote: {}
     })

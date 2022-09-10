@@ -1,9 +1,9 @@
 <template>
     <!-- Main modal -->
     <div id="default-modal" data-modal-show="true" aria-hidden="true" :class="`${(modal.ready ? `flex` : `hidden`)} overflow-x-hidden overflow-y-auto fixed m-h-screen top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center bg-slate-800/75`">
-        <div class="relative w-full max-w-4xl px-4 h-full md:h-auto">
+        <div class="relative w-full max-w-4xl px-4 h-screen lg:h-full md:h-auto">
             <!-- Modal content -->
-            <div class="bg-white rounded-lg shadow relative dark:bg-gray-700">
+            <div class="bg-white rounded-lg shadow relative dark:bg-gray-700 my-5 lg:my-48">
                 <!-- Modal header -->
                 <div class="flex items-start justify-between p-5 border-b rounded-t dark:border-gray-600">
                     <h3 class="text-gray-900 text-xl lg:text-2xl font-semibold dark:text-white">

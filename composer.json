@@ -11,7 +11,10 @@
     "autoload": {
         "psr-4": {
             "SLiMS\\Play\\": "app/"
-        }
+        },
+        "files": [
+            "./helper.php"
+        ]
     },
     "authors": [
         {

@@ -10,7 +10,7 @@
         </table>
         <dl class="flex flex-wrap">
             <template v-for="label in getLabel()">
-                <dt class="w-2/6 my-1"><strong>{{ label.text }}</strong></dt>
+                <dt class="w-2/6 my-1 mr-2 lg:mr-0"><strong>{{ label.text }}</strong></dt>
                 <dd class="w-4/6 my-1">{{ label.value }}</dd>
             </template>
         </dl>
