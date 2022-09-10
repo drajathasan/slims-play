@@ -3,7 +3,7 @@
  * @author Drajat Hasan
  * @email drajathasan20@gmail.com
  * @create date 2022-08-30 19:44:50
- * @modify date 2022-09-10 15:06:13
+ * @modify date 2022-09-10 16:29:23
  * @license GPLv3
  * @desc [description]
  */
@@ -20,7 +20,7 @@ defined('INDEX_AUTH') or die('Direct access is not allowed!');
         <meta http-equiv="Pragma" content="no-cache"/>
         <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, post-check=0, pre-check=0"/>
         <meta http-equiv="Expires" content="Sat, 26 Jul 1997 05:00:00 GMT"/>
-        <meta name="image_url" content="<?= $sysconf['dummy_url']??'lib/minigalnano/createthumb.php?filename=../../images/docs/' ?>"/>
+        <meta name="image_url" content="<?= $sysconf['dummy_url']??'lib/minigalnano/createthumb.php?filename=images/docs/' ?>"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Quicksand&display=swap" rel="stylesheet">

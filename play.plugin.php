@@ -26,6 +26,11 @@ $plugin->register('before_content_load', function(){
 
     // Check the user agent of the current 'visitor'
     if(!$CrawlerDetect->isCrawler() && !isset($_GET['p'])) {
+        if (SENAYAN_VERSION_TAG !== 'v9.4.2')
+        {
+            exit('<h1>Hanya untuk SLIMS 9.4.2</h1>Versi anda terdeteksi <strong>'.SENAYAN_VERSION_TAG.'</strong>, silahkan ganti pada halaman admin lalu matikan plugin "play", <a href="'.AWB.'">Login</a>');
+        }
+        
         if (strpos(SWB, '.php'))
         {
             $pathInfo = pathinfo($_SERVER['PHP_SELF']);
